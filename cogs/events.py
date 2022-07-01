@@ -45,6 +45,11 @@ class Events(commands.Cog):
             user_id = 459731062994632704
             await message.channel.send(f"<@{user_id}>, проснись, мать!")
 
+        if 'cute' in msg:
+            message = await message.channel.send("UwU")
+            await message.add_reaction("<a:verify:992472990430269580>")
+
+
 
 def setup(bot: commands.Bot):
     bot.add_cog(Events(bot))
