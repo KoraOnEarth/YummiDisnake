@@ -1,6 +1,6 @@
 import disnake
 from disnake.ext import commands
-
+import os
 
 bot = commands.Bot(command_prefix='!', intents= disnake.Intents.all(), activity = disnake.Game('клубочек', status = disnake.Status.online))
 bot.remove_command('help')
@@ -11,5 +11,5 @@ bot.load_extension("cogs.weather")
 bot.load_extension("cogs.events")
 
 
-token = open('token.txt', 'r').readline()
+token = os.getenv("token.txt")
 bot.run(token)
