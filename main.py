@@ -12,5 +12,6 @@ bot.load_extension("cogs.weather")
 bot.load_extension("cogs.events")
 
 
+
 token = os.getenv('token')
 bot.run(token)
