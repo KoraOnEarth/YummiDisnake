@@ -18,7 +18,7 @@ class SlashCommand(commands.Cog):
 
 
         embed = disnake.Embed(title="Заявка о баге", description= msg, color= disnake.Colour.green())
-        embed.set_image(url="https://i.ibb.co/r3jN7G6/bug-logo.png")
+        embed.set_image(url="https://i.ibb.co/341ZX0b/zhuk.png")
 
 
         await inter.send(embed=embed)
