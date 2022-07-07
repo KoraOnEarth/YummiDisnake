@@ -36,8 +36,7 @@ class Events(commands.Cog):
         msg = message.content.lower()
 
 
-        YummiBOT = f"<{990263560640794684}>"
-        if message.author == YummiBOT:
+        if message.author.bot:
                 return
 
 

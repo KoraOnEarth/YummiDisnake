@@ -7,7 +7,7 @@ import os
 class WeatherCommand(commands.Cog):
     @commands.slash_command(name = "погода", description="Информация о погоде")
     async def weather(self, inter: disnake.ApplicationCommandInteraction, city: str):
-        weathertoken = os.getenv('token')
+        weathertoken = os.getenv('weathertoken')
         base_url = "http://api.openweathermap.org/data/2.5/weather?"
         city_name = city
         city_name_cap = city_name.capitalize()

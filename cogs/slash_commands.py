@@ -2,7 +2,6 @@ import disnake
 from disnake.ext import commands
 
 
-
 class SlashCommand(commands.Cog):
     def __init__(self, bot = commands.Bot):
         self.bot = bot
@@ -22,6 +21,32 @@ class SlashCommand(commands.Cog):
 
 
         await inter.send(embed=embed)
+
+
+    @commands.slash_command(description="Позвать тех, кто онлайн. Amount - количество свободных слотов.")
+    async def here(self, inter:disnake.AppCommandInteraction, amount:int):
+        await inter.response.defer()
+        if amount == 1:
+            await inter.edit_original_message(f"@here, общий подъем! Есть сексуальный слот! Присоединяйся!)")
+        elif 2 <= amount <=4:
+            await inter.edit_original_message(f"@here, общий подъем! Есть сексуальные {amount} слота! Присоединяйтесь!)")
+        else:
+            await inter.edit_original_message(f"@here, общий подъем! Есть сексуальные {amount} слотов! Присоединяйтесь!)")
+
+        
+        
+#     @commands.slash_command(name= "happy_birthday", description="День Рождения")
+#     async def birthday(self, inter: disnake.ApplicationCommandInteraction):
+#         msg = "У нас сегодня именинник! <@459731062994632704>, с Днём Рождения! \n\n\
+# Пусть я не так давно появилась на свет, но была впечатлена твоей проницательностью, дружелюбием, жизнерадостностью, умением радоваться за других, любви\
+#  к приключениям и вечной тягой к участию во всём интересном!\n В этот радостный для всех день я.. я.. не знаю даже.. ХОЧУ ОБЪЯВИТЬ КАКОЙ-НИБУДЬ КОНКУРС, УАХАХХАХААААПЧХИ\
+#  /чихнула от возбуждения/! \nВы можете прислать в специальный канал какую-нибудь работу, причем неважно какую! Это может быть видеозапись поздравления, \
+# какой-нибудь Ваш рисунок на тему этого Дня Рождения, что угодно! Я буду коллекционировать это в течении дня, а потом.. потом.. НЕ ЗНАЮ! \nНЕ СМОТРИТЕ ТАК НА МЕНЯ! \
+# МНЕ МЕНЬШЕ ДВУХ МЕСЯЦЕВ, Я ПОКА НЕ УМЕЮ ПРОДУМЫВАТЬ ПЛАНЫ ><\n\nВ-общем, давайте хорошенько порадуем Олю сегодня, потому что ей плохое настроение не очень подходит,\
+#  она, как-никак, не Векс! А уж особенно сегодня! \nА по поводу наград, и как они будут выдаваться - давайте решим позже. Все-таки, я надеюсь, Вы это будете делать не ради них)) \
+# Ну а сейчас празднуем, поздравляем, спим.. Ой, не то слово.. Какое же там слово должно быть.. АААА, ВСПОМНИЛА! И ВЕСЕЛИМСЯ!!!"
+#         embed = disnake.Embed(title="С днем рождения, Оля!", description = msg, color= disnake.Colour.green())
+#         await inter.send(embed = embed)
 
 
     @commands.slash_command(description="Чистка сообщений")
@@ -156,7 +181,7 @@ class SlashCommand(commands.Cog):
         else:
             await inter.response.defer()
             await inter.edit_original_message(f"{inter.author.mention} желает сладких снов {member.mention}")
-
+            
 
 
 def setup(bot: commands.Bot):
