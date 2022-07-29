@@ -213,6 +213,12 @@ class Events(commands.Cog):
         if ' сайлас' in msg:
             await message.channel.send('Ищи себе другую книгу!')
 
+        if ' енэ' in msg:
+            await message.channel.send('/Юми лизнула Ёнэ/')
+
+        if ' ёнэ' in msg:
+            await message.channel.send('/Юми лизнула Ёнэ/')
+
 
 
 def setup(bot: commands.Bot):

@@ -50,7 +50,7 @@ class SlashCommand(commands.Cog):
 
 
     @commands.slash_command(description="Чистка сообщений")
-    @commands.has_permissions(administrator = True)
+    @commands.has_permissions(manage_roles = True)
     async def clear(self, inter: disnake.ApplicationCommandInteraction, amount : int):
             await inter.channel.purge(limit = amount)
             await inter.response.defer()

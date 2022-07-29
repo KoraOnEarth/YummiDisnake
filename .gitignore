@@ -4,3 +4,4 @@ weathertoken.txt
 todo
 cogs/__pycache__/events.cpython-310.pyc
 *.pyc
+cogs/blackjack.py
