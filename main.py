@@ -14,7 +14,7 @@ bot.remove_command('help')
 bot.load_extension("cogs.slash_commands")
 bot.load_extension("cogs.weather")
 bot.load_extension("cogs.events")
-bot.load_extension("cogs.blackjack")
+# bot.load_extension("cogs.blackjack")
 
 
 token = os.getenv('token')
